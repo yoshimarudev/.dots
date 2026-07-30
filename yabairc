@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+# layout
+yabai -m config layout bsp
+yabai -m config window_placement second_child
+
+# padding & gaps
+yabai -m config top_padding    8
+yabai -m config bottom_padding 8
+yabai -m config left_padding   8
+yabai -m config right_padding  8
+yabai -m config window_gap     8
+
+# mouse
+yabai -m config mouse_modifier       alt
+yabai -m config mouse_action1        move
+yabai -m config mouse_action2        resize
+yabai -m config mouse_drop_action    swap
+
+# exclude apps that don't play well with tiling
+yabai -m rule --add app="^System Settings$"    manage=off
+yabai -m rule --add app="^Calculator$"         manage=off
+yabai -m rule --add app="^Finder$"             manage=off
+
+# force-manage windows yabai auto-floats because they report can-resize=false
+yabai -m rule --add app="^Simulator$"          manage=on
+

@@ -1,0 +1,35 @@
+# focus window (vim keys)
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+# switch spaces
+cmd - f : yabai -m space --focus 1
+cmd - u : yabai -m space --focus 2
+cmd - p : yabai -m space --focus 3
+cmd - n : yabai -m space --focus 4
+cmd - e : yabai -m space --focus 5
+cmd - r : yabai -m space --focus 6
+
+# send focused window to space
+shift + cmd - f : yabai -m window --space 1
+shift + cmd - u : yabai -m window --space 2
+shift + cmd - p : yabai -m window --space 3
+shift + cmd - n : yabai -m window --space 4
+shift + cmd - e : yabai -m window --space 5
+
+# toggle fullscreen
+shift + cmd - i : yabai -m window --toggle zoom-fullscreen
+
+# toggle float
+shift + cmd - t : yabai -m window --toggle float
+
+# balance windows (was shift+cmd-e, conflicts with space 5 — rebind if desired)
+# shift + cmd - e : yabai -m space --balance
+
+# rotate layout
+shift + cmd - r : yabai -m space --rotate 270
+
+# close window
+shift + cmd - q : yabai -m window --close
