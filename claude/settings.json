@@ -1,0 +1,159 @@
+{
+  "model": "opus[1m]",
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# stash-agent-status\nmkdir -p '/Users/Team/Library/Application Support/Stash/agents' && { printf '{\"event\":\"Notification\",\"payload\":'; cat; printf '}'; } > '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' && mv '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' '/Users/Team/Library/Application Support/Stash/agents/claude-code.json' || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# stash-agent-status\nmkdir -p '/Users/Team/Library/Application Support/Stash/agents' && { printf '{\"event\":\"PostToolUse\",\"payload\":'; cat; printf '}'; } > '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' && mv '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' '/Users/Team/Library/Application Support/Stash/agents/claude-code.json' || true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# stash-agent-status\nmkdir -p '/Users/Team/Library/Application Support/Stash/agents' && { printf '{\"event\":\"PreToolUse\",\"payload\":'; cat; printf '}'; } > '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' && mv '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' '/Users/Team/Library/Application Support/Stash/agents/claude-code.json' || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Grep|Glob|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/codegraph-nudge.sh 2>/dev/null || true",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# stash-agent-status\nmkdir -p '/Users/Team/Library/Application Support/Stash/agents' && { printf '{\"event\":\"SessionEnd\",\"payload\":'; cat; printf '}'; } > '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' && mv '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' '/Users/Team/Library/Application Support/Stash/agents/claude-code.json' || true"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/Team/.claude/plugins/cache/superpowers-extended-cc-marketplace/superpowers-extended-cc/6.5.3-dev/hooks/check-onboard-drift\""
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# stash-agent-status\nmkdir -p '/Users/Team/Library/Application Support/Stash/agents' && { printf '{\"event\":\"SessionStart\",\"payload\":'; cat; printf '}'; } > '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' && mv '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' '/Users/Team/Library/Application Support/Stash/agents/claude-code.json' || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# stash-agent-status\nmkdir -p '/Users/Team/Library/Application Support/Stash/agents' && { printf '{\"event\":\"Stop\",\"payload\":'; cat; printf '}'; } > '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' && mv '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' '/Users/Team/Library/Application Support/Stash/agents/claude-code.json' || true"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# stash-agent-status\nmkdir -p '/Users/Team/Library/Application Support/Stash/agents' && { printf '{\"event\":\"UserPromptSubmit\",\"payload\":'; cat; printf '}'; } > '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' && mv '/Users/Team/Library/Application Support/Stash/agents/claude-code.json.tmp' '/Users/Team/Library/Application Support/Stash/agents/claude-code.json' || true"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "engram@engram": true,
+    "expo@claude-plugins-official": true,
+    "posthog@claude-plugins-official": true,
+    "superpowers-extended-cc@superpowers-extended-cc-marketplace": true,
+    "revenuecat@claude-plugins-official": true,
+    "ponytail@ponytail": true
+  },
+  "extraKnownMarketplaces": {
+    "engram": {
+      "source": {
+        "source": "github",
+        "repo": "Gentleman-Programming/engram"
+      }
+    },
+    "superpowers-extended-cc-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "pcvelz/superpowers"
+      },
+      "autoUpdate": true
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    },
+    "RevenueCat": {
+      "source": {
+        "source": "github",
+        "repo": "RevenueCat/ai-toolkit"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
+  "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5": {
+      "effortLevel": "xhigh"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "editorMode": "vim",
+  "agentPushNotifEnabled": true
+}

@@ -5,12 +5,13 @@ cmd - k : yabai -m window --focus north
 cmd - l : yabai -m window --focus east
 
 # switch spaces
-cmd - f : yabai -m space --focus 1
-cmd - u : yabai -m space --focus 2
-cmd - p : yabai -m space --focus 3
-cmd - n : yabai -m space --focus 4
-cmd - e : yabai -m space --focus 5
-cmd - r : yabai -m space --focus 6
+cmd - f : ~/.config/yabai/focus-space.sh 1
+cmd - u : ~/.config/yabai/focus-space.sh 2
+cmd - p : ~/.config/yabai/focus-space.sh 3
+cmd - n : ~/.config/yabai/focus-space.sh 4
+cmd - e : ~/.config/yabai/focus-space.sh 5
+cmd - r : ~/.config/yabai/focus-display.sh next
+cmd - i : ~/.config/yabai/focus-space.sh 7
 
 # send focused window to space
 shift + cmd - f : yabai -m window --space 1
@@ -20,7 +21,7 @@ shift + cmd - n : yabai -m window --space 4
 shift + cmd - e : yabai -m window --space 5
 
 # toggle fullscreen
-shift + cmd - i : yabai -m window --toggle zoom-fullscreen
+cmd - i : ~/.config/yabai/focus-space.sh 7
 
 # toggle float
 shift + cmd - t : yabai -m window --toggle float
